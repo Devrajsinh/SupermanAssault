@@ -54,7 +54,7 @@ namespace Asteroid_Belt_Assault
                 thisShot.clearFrames();
                 thisShot.AddFrame(new Rectangle(2, 313, 10, 32));
                 thisShot.Location += new Vector2(0,-15);
-                SoundManager.PlayPlayerShot();
+                SoundManager.PlayPlayerShot(); 
             }
             else
             {
