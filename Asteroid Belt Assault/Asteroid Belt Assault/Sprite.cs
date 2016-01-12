@@ -140,6 +140,11 @@ namespace Asteroid_Belt_Assault
             frames.Add(frameRectangle);
         }
 
+        public void clearFrames()
+        {
+            frames.Clear();
+        }
+
         public virtual void Update(GameTime gameTime)
         {
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;

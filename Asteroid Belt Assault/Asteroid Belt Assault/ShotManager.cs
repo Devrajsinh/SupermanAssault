@@ -47,27 +47,31 @@ namespace Asteroid_Belt_Assault
 
             thisShot.Velocity *= shotSpeed;
 
-            for (int x = 1; x < FrameCount; x++)
-            {
-                thisShot.AddFrame(new Rectangle(
-                    InitialFrame.X + (InitialFrame.Width * x),
-                    InitialFrame.Y,
-                    InitialFrame.Width,
-                    InitialFrame.Height));
-            }
-            thisShot.CollisionRadius = CollisionRadius;
-            Shots.Add(thisShot);
 
+            //2,313,4,32
             if (playerFired)
             {
-
+                thisShot.clearFrames();
+                thisShot.AddFrame(new Rectangle(2, 313, 10, 32));
+                thisShot.Location += new Vector2(0,-15);
                 SoundManager.PlayPlayerShot();
             }
             else
             {
-
+                for (int x = 1; x < FrameCount; x++)
+                {
+                    thisShot.AddFrame(new Rectangle(
+                        InitialFrame.X + (InitialFrame.Width * x),
+                        InitialFrame.Y,
+                        InitialFrame.Width,
+                        InitialFrame.Height));
+                }
                 SoundManager.PlayEnemyShot();
             }
+
+            thisShot.CollisionRadius = CollisionRadius;
+            Shots.Add(thisShot);
+
         }
 
         public void Update(GameTime gameTime)

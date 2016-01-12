@@ -96,8 +96,8 @@ namespace Asteroid_Belt_Assault
 
             playerManager = new PlayerManager(
                 SuperSprite,    
-                new Rectangle(0, 0, 174, 130),    
-                3,
+                new Rectangle(0, 0, 51, 64),    
+                1,
                 new Rectangle(
                     0,
                     0,
