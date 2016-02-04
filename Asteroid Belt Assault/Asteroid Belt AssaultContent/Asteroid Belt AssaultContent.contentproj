@@ -16,6 +16,11 @@
     <RootNamespace>Asteroid_Belt_AssaultContent</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Textures\krypton.png">
+      <Name>krypton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="Textures\SpriteSheet.png">
       <Name>SpriteSheet</Name>
       <Importer>TextureImporter</Importer>

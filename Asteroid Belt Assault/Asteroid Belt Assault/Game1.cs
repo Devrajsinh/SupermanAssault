@@ -24,6 +24,7 @@ namespace Asteroid_Belt_Assault
         Texture2D titleScreen;
         Texture2D spriteSheet;
         Texture2D SuperSprite;
+        Texture2D krypton;
 
         StarField starField;
         StarField starField1;
@@ -32,6 +33,7 @@ namespace Asteroid_Belt_Assault
         PlayerManager playerManager;
         EnemyManager enemyManager;
         ExplosionManager explosionManager;
+
 
         CollisionManager collisionManager;
 
@@ -79,6 +81,7 @@ namespace Asteroid_Belt_Assault
             titleScreen = Content.Load<Texture2D>(@"Textures\TitleScreen");
             spriteSheet = Content.Load<Texture2D>(@"Textures\spriteSheet");
             SuperSprite = Content.Load<Texture2D>(@"Textures\SuperSprite");
+            krypton = Content.Load<Texture2D>(@"Textures\krypton");
 
             starField = new StarField(
                 this.Window.ClientBounds.Width,
@@ -201,6 +204,7 @@ namespace Asteroid_Belt_Assault
                             (GamePad.GetState(PlayerIndex.One).Buttons.A ==
                             ButtonState.Pressed))
                         {
+
                             playerManager.LivesRemaining = playerStartingLives;
                             playerManager.PlayerScore = 0;
                             resetGame();
@@ -299,6 +303,10 @@ namespace Asteroid_Belt_Assault
                 (gameState == GameStates.PlayerDead) ||
                 (gameState == GameStates.GameOver))
             {
+                spriteBatch.Draw(krypton,
+                    new Rectangle(0, 0, this.Window.ClientBounds.Width,
+                        this.Window.ClientBounds.Height),
+                        Color.White);
                 starField.Draw(spriteBatch);
                 starField1.Draw(spriteBatch);
                 starField2.Draw(spriteBatch);
@@ -306,6 +314,7 @@ namespace Asteroid_Belt_Assault
                 playerManager.Draw(spriteBatch);
                 enemyManager.Draw(spriteBatch);
                 explosionManager.Draw(spriteBatch);
+                
 
                 spriteBatch.DrawString(
                     pericles14,
